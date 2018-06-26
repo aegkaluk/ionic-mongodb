@@ -34,6 +34,7 @@ export class AddreviewPage {
       rating: this.rating
     };
     this.viewCtrl.dismiss(review);
+    console.log("save():",review);
   }
 
   close(): void {

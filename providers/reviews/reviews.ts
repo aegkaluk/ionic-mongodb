@@ -1,5 +1,6 @@
-import { HttpClient,HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { HttpClient,HttpHeaders } from '@angular/common/http';
+//import { Http, Headers } from '@angular/http';
 import 'rxjs/add/operator/map';
 
 
@@ -14,7 +15,7 @@ export class ReviewsProvider {
   
   data:any;
 
-  constructor(public http: HttpClient) {
+  constructor(public http:HttpClient) {
     console.log('Hello ReviewsProvider Provider');
     this.data = null;
   }
@@ -40,7 +41,7 @@ export class ReviewsProvider {
     let headers = new HttpHeaders();
     headers.append('Content-type','application/json');
 
-    this.http.post('http://localhost:8080/api/reviews',JSON.stringify(review),{headers: headers })
+    this.http.post('http://localhost:8080/api/reviews',JSON.stringify(review),{ headers: headers })
         .subscribe(res => {
           console.log(res);
         });

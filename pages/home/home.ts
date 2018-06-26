@@ -26,10 +26,10 @@ export class HomePage {
 
     let modal = this.modalCtrl.create(AddreviewPage);
 
-    modal.onDidDismiss(review=> {
+    modal.onDidDismiss(review => {
       if(review){
-        this.reviews.push(review);
         this.reviewService.createReview(review);
+        //this.reviews.push(review);        
       }
     })
     modal.present();
