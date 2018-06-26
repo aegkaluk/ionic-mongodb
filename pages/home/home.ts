@@ -16,6 +16,7 @@ export class HomePage {
   }
 
   ionViewDidLoad(){
+    console.log("loadHome");
     this.reviewService.getReviews().then((data)=>{
       console.log(data);
       this.reviews = data;

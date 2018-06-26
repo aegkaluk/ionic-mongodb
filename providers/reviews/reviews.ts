@@ -38,10 +38,11 @@ export class ReviewsProvider {
   }
   
   createReview(review){
+    console.log("check createReview:",review);
     let headers = new HttpHeaders();
-    headers.append('Content-type','application/json');
+    headers.append('Content-Type', 'application/json');
 
-    this.http.post('http://localhost:8080/api/reviews',JSON.stringify(review),{ headers: headers })
+    this.http.post('http://localhost:8080/api/reviews', review, { headers: headers })
         .subscribe(res => {
           console.log(res);
         });
