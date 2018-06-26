@@ -29,7 +29,7 @@ export class HomePage {
     modal.onDidDismiss(review => {
       if(review){
         this.reviewService.createReview(review);
-        //this.reviews.push(review);        
+        this.reviews.push(review);        
       }
     })
     modal.present();

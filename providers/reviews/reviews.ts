@@ -25,11 +25,11 @@ export class ReviewsProvider {
       return Promise.resolve(this.data);
     }
   
-    return new Promise(resolve=>{
+    return new Promise(resolve => {
 
       this.http.get('http://localhost:8080/api/reviews')
-          .map(res => console.log(res))
-          .subscribe( data=> {
+          .map(res => res )
+          .subscribe( data => {
             this.data = data;
             resolve(this.data);
           });
@@ -49,7 +49,7 @@ export class ReviewsProvider {
 
   deleteReview(id){
 
-    this.http.delete('http://localhost:8080/api/reviews'+id)
+    this.http.delete('http://localhost:8080/api/reviews/'+id)
         .subscribe((res)=>{
             console.log(res);
         });
