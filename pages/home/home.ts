@@ -18,7 +18,6 @@ export class HomePage {
   ionViewDidLoad(){
     console.log("loadHome");
     this.reviewService.getReviews().then((data)=>{
-      console.log(data);
       this.reviews = data;
     });
   }
@@ -41,7 +40,7 @@ export class HomePage {
 
     let index = this.reviews.indexOf(review);
     if(index>-1){
-      this.reviews.splice(index,1);
+      this.reviews.splice(index,1); //Remove ion-item from ion-list
     }
     //remove from database
     this.reviewService.deleteReview(review._id);

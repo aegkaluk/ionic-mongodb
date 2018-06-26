@@ -27,7 +27,7 @@ export class ReviewsProvider {
   
     return new Promise(resolve => {
 
-      this.http.get('http://localhost:8080/api/reviews')
+      this.http.get('http://192.168.21.240:8080/api/reviews')
           .map(res => res )
           .subscribe( data => {
             this.data = data;
@@ -42,7 +42,7 @@ export class ReviewsProvider {
     let headers = new HttpHeaders();
     headers.append('Content-Type', 'application/json');
 
-    this.http.post('http://localhost:8080/api/reviews', review, { headers: headers })
+    this.http.post('http://192.168.21.240:8080/api/reviews', review, { headers: headers })
         .subscribe(res => {
           console.log(res);
         });
@@ -50,7 +50,7 @@ export class ReviewsProvider {
 
   deleteReview(id){
 
-    this.http.delete('http://localhost:8080/api/reviews/'+id)
+    this.http.delete('http://192.168.21.240:8080/api/reviews/'+id)
         .subscribe((res)=>{
             console.log(res);
         });
